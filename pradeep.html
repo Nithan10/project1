@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Text to Speech</title>
+</head>
+<body>
+    <div>
+        <h2>Text to Speech</h2>
+        <textarea id="text-to-speech-input" rows="4" cols="50"></textarea>
+    </div>
+    <script>
+        // Function to convert text to speech and play it
+        function speakText() {
+            const text = document.getElementById('text-to-speech-input').value;
+            const speech = new SpeechSynthesisUtterance();
+            speech.text = text;
+            window.speechSynthesis.speak(speech);
+        }
+
+        // Automatically speak the text when the page loads
+        window.onload = function() {
+            speakText();
+        };
+    </script>
+</body>
+</html>
